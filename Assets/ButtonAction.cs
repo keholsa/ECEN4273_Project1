@@ -8,7 +8,9 @@ using UnityEngine.UIElements;
 public class ButtonAction : MonoBehaviour
 {
     UIDocument buttonDocument;
-    Button uiButton;
+    Button startButton;
+    Button exitButton;
+
     void OnEnable()
     {
         buttonDocument = GetComponent<UIDocument>();
@@ -17,21 +19,26 @@ public class ButtonAction : MonoBehaviour
         {
             Debug.LogError("no button doc found");
         }
-        uiButton = buttonDocument.rootVisualElement.Q("start") as Button;
+        startButton = buttonDocument.rootVisualElement.Q("start") as Button;
+        exitButton = buttonDocument.rootVisualElement.Q("exit") as Button;
 
-
-        if (uiButton != null)
+        if (startButton != null)
         {
             Debug.Log("buttonfound");
         }
 
-        uiButton.RegisterCallback<ClickEvent>(OnButtonClick);
-        
+        startButton.RegisterCallback<ClickEvent>(OnStartClick);
+        exitButton.RegisterCallback<ClickEvent>(OnExitClick);
     }
 
-    public void OnButtonClick(ClickEvent evt)
+    public void OnStartClick(ClickEvent evt)
     {
         Debug.Log("start has been clicked");
         SceneManager.LoadScene("Level1");
-    }    
+    }
+    public void OnExitClick(ClickEvent evt)
+    {
+        Debug.Log("Exit has been clicked");
+        Application.Quit();
+    }
 }

@@ -1,0 +1,8 @@
+.pausebuttons {
+}
+
+.pausebuttons:hover {
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgba(255, 0, 0, 255);
+    color: rgba(0, 3, 255, 255);
+}
