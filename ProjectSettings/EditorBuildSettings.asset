@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: a719500c5e4180d42bed97587c89a165
+  - enabled: 1
+    path: Assets/Scenes/keypad.unity
+    guid: 7a619f1c5fcbe9044ac25dbbb70d7c28
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b94cc66555d6d3247a912b126365a7e1, type: 2}
