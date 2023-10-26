@@ -4,31 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
 public class PlayerController_SideScroll : MonoBehaviour
 {
     public float walkSpeed = 5f;
     public float fastSpeed = 8f; 
+    public float airspeed = 3f;
+    public float jumpImpulse = 10f;
     Vector2 moveInput;
+    TouchingDirections touchingDirections;
 
     public float CurrMoveSpd 
-    {
-        get
+    {   get
         {
-            if(IsMoving)
+            if(IsMoving && !touchingDirections.IsOnWall)
             {
-                if(IsFast)
+                if(touchingDirections.IsGrounded)
                 {
-                    return fastSpeed;
+                    if(IsFast) {return fastSpeed;}
+                    else {return walkSpeed;}
                 }
-                else
-                {
-                    return walkSpeed;
-                }
+                else {return airspeed;}
             }
-            else{
-                return 0;
-            }
+            else {return 0;}
         }
     }
 
@@ -36,10 +34,7 @@ public class PlayerController_SideScroll : MonoBehaviour
     private bool _isMoving = false;
     public bool IsMoving 
     { 
-        get 
-        {
-            return _isMoving;
-        } 
+        get {return _isMoving;} 
         private set
         {
             _isMoving = value;
@@ -51,10 +46,7 @@ public class PlayerController_SideScroll : MonoBehaviour
     private bool _isFast = false;
     public bool IsFast
     {
-        get
-        {
-            return _isFast;
-        }
+        get{return _isFast;}
         set
         {
             _isFast = value;
@@ -65,10 +57,7 @@ public class PlayerController_SideScroll : MonoBehaviour
     public bool _isFacingRight = true;
     public bool IsFacingRight 
     { 
-        get
-        {
-            return _isFacingRight;
-        } 
+        get {return _isFacingRight;} 
         private set
         {
             if(_isFacingRight != value)
@@ -81,61 +70,46 @@ public class PlayerController_SideScroll : MonoBehaviour
 
     Rigidbody2D rb;
     Animator animator;
+    
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        touchingDirections = GetComponent<TouchingDirections>();
     }
 
     private void FixedUpdate() 
     {
         rb.velocity = new Vector2(moveInput.x * CurrMoveSpd, rb.velocity.y);
+        animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-        
         IsMoving = moveInput != Vector2.zero;
-
         SetFacingDirection(moveInput);
     }
 
     private void SetFacingDirection(Vector2 moveInput)
     {
-        if(moveInput.x > 0 && !IsFacingRight) // Right
-        {
-            IsFacingRight = true;
-        }
-        else if(moveInput.x < 0 && IsFacingRight) //Left
-        {
-            IsFacingRight = false;
-        }
+        if(moveInput.x > 0 && !IsFacingRight) {IsFacingRight = true;}      // Right
+        else if(moveInput.x < 0 && IsFacingRight) {IsFacingRight = false;} // Left
     }
 
     public void OnFast(InputAction.CallbackContext context)
     {
-        if(context.started)
+        if(context.started) {IsFast = true;}
+        else if(context.canceled){IsFast = false;}
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {   //TODO: Check when alive
+        if(context.started && touchingDirections.IsGrounded) 
         {
-            IsFast = true;
-        }
-        else if(context.canceled)
-        {
-            IsFast = false;
+            animator.SetTrigger(AnimationStrings.jump);
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
     }
 }

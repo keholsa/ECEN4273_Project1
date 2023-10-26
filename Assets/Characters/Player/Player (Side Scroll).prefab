@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1384818775195749287}
   - component: {fileID: 9005472829215337953}
   - component: {fileID: 2878396235178788590}
+  - component: {fileID: 780188769825618361}
   m_Layer: 0
   m_Name: Player (Side Scroll)
   m_TagString: Untagged
@@ -124,6 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 1
   fastSpeed: 2
+  airspeed: 2
+  jumpImpulse: 3
   _isMoving: 0
   _isFast: 0
   _isFacingRight: 1
@@ -232,6 +235,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 88c106dc-8b63-41a9-ad1e-ab937990b1d5
     m_ActionName: Player/Fast[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3800579537074808604}
+        m_TargetAssemblyTypeName: PlayerController_SideScroll, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 57a1768e-005d-4330-a276-236b650bcd60
+    m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -274,3 +293,35 @@ CapsuleCollider2D:
   m_Offset: {x: -0.014879211, y: -0.009565002}
   m_Size: {x: 0.1694264, y: 0.40961444}
   m_Direction: 0
+--- !u!114 &780188769825618361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561420373970152970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a770cfd89b8534a89d88372f118737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
+  wallDistance: 0.05
+  ceilingDistance: 0.05
+  _isGrounded: 1
+  _isOnWall: 1
+  _isOnCeling: 1
