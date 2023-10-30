@@ -10,6 +10,7 @@ public class ButtonAction : MonoBehaviour
     UIDocument buttonDocument;
     Button startButton;
     Button exitButton;
+    Button hiddenButton;
 
     void OnEnable()
     {
@@ -21,20 +22,31 @@ public class ButtonAction : MonoBehaviour
         }
         startButton = buttonDocument.rootVisualElement.Q("start") as Button;
         exitButton = buttonDocument.rootVisualElement.Q("exit") as Button;
-
+        hiddenButton = buttonDocument.rootVisualElement.Q("hidden_button") as Button;
+        /* debug info
         if (startButton != null)
         {
             Debug.Log("buttonfound");
         }
+        */
 
         startButton.RegisterCallback<ClickEvent>(OnStartClick);
         exitButton.RegisterCallback<ClickEvent>(OnExitClick);
+        hiddenButton.RegisterCallback<ClickEvent>(CreditsClick);
+    }
+
+    public void CreditsClick(ClickEvent evt)
+    {
+        Debug.Log("credits has been clicked");
+        SceneManager.LoadScene("Game_Over");
+        Time.timeScale = 1f;
     }
 
     public void OnStartClick(ClickEvent evt)
     {
         Debug.Log("start has been clicked");
         SceneManager.LoadScene("Level1");
+        Time.timeScale = 1f;
     }
     public void OnExitClick(ClickEvent evt)
     {
