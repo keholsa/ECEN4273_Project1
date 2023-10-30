@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController_SideScroll : MonoBehaviour
 {
     public float walkSpeed = 5f;
@@ -13,20 +14,25 @@ public class PlayerController_SideScroll : MonoBehaviour
     public float jumpImpulse = 10f;
     Vector2 moveInput;
     TouchingDirections touchingDirections;
+    Damageable damageable;
 
     public float CurrMoveSpd 
     {   get
         {
-            if(IsMoving && !touchingDirections.IsOnWall)
+            if(CanMove)
             {
-                if(touchingDirections.IsGrounded)
+                if(IsMoving && !touchingDirections.IsOnWall)
                 {
-                    if(IsFast) {return fastSpeed;}
-                    else {return walkSpeed;}
+                    if(touchingDirections.IsGrounded)
+                    {
+                        if(IsFast) {return fastSpeed;}
+                        else {return walkSpeed;}
+                    }
+                    else {return airspeed;}
                 }
-                else {return airspeed;}
+                else {return 0;} // idle spd = 0
             }
-            else {return 0;}
+            else {return 0;} // can't move
         }
     }
 
@@ -68,6 +74,16 @@ public class PlayerController_SideScroll : MonoBehaviour
         } 
     }
 
+    public bool CanMove
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        }
+    }
+
+
+
     Rigidbody2D rb;
     Animator animator;
     
@@ -77,12 +93,36 @@ public class PlayerController_SideScroll : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>();
     }
+
+    private float timeSinceDeath = 0;
+    public float GameOverTime = 5f;
 
     private void FixedUpdate() 
     {
-        rb.velocity = new Vector2(moveInput.x * CurrMoveSpd, rb.velocity.y);
+        if(!damageable.LockVelocity)
+        {
+            rb.velocity = new Vector2(moveInput.x * CurrMoveSpd, rb.velocity.y);
+        }
+        
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
+
+        if(!animator.GetBool(AnimationStrings.isAlive))
+        {
+            rb.velocity = Vector2.zero;
+            timeSinceDeath = 0;
+            while(timeSinceDeath < GameOverTime)
+            {
+                timeSinceDeath += Time.deltaTime;
+                Debug.Log("Wait for: " + timeSinceDeath);
+            }
+            SceneManager.LoadScene("title screen");
+
+            
+        }
+
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -94,8 +134,11 @@ public class PlayerController_SideScroll : MonoBehaviour
 
     private void SetFacingDirection(Vector2 moveInput)
     {
-        if(moveInput.x > 0 && !IsFacingRight) {IsFacingRight = true;}      // Right
-        else if(moveInput.x < 0 && IsFacingRight) {IsFacingRight = false;} // Left
+        if(animator.GetBool(AnimationStrings.isAlive))
+        {
+            if(moveInput.x > 0 && !IsFacingRight) {IsFacingRight = true;}      // Right
+            else if(moveInput.x < 0 && IsFacingRight) {IsFacingRight = false;} // Left
+        }
     }
 
     public void OnFast(InputAction.CallbackContext context)
@@ -106,10 +149,24 @@ public class PlayerController_SideScroll : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {   //TODO: Check when alive
-        if(context.started && touchingDirections.IsGrounded) 
+        if(context.started && touchingDirections.IsGrounded && CanMove) 
         {
-            animator.SetTrigger(AnimationStrings.jump);
+            animator.SetTrigger(AnimationStrings.jumpTrigger);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
     }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            animator.SetTrigger(AnimationStrings.attackTrigger);
+        }
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+    }
+
 }

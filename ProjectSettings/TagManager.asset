@@ -13,11 +13,11 @@ TagManager:
   - Water
   - UI
   - Interractable Objects
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Enemy
+  - PlayerHitbox
+  - EnemyHitbox
   - 
   - 
   - 
