@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game_Over.unity
     guid: 795180f36199cd04f8cc4e4baa27a229
+  - enabled: 1
+    path: Assets/Scenes/LeverPuzzle.unity
+    guid: d3619cf4b127f494fa5ee7abab09ccbd
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b94cc66555d6d3247a912b126365a7e1, type: 2}
