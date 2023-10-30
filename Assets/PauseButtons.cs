@@ -13,6 +13,7 @@ public class PauseButtons : MonoBehaviour
 
     [SerializeField]  UIDocument buttonDocument;
     Button menuButton;
+    Button giveupButton;
     [SerializeField] GameObject pauseUI;
 
     void Start()
@@ -28,6 +29,16 @@ public class PauseButtons : MonoBehaviour
     {
         Debug.Log("menu has been clicked");
         SceneManager.LoadScene("title screen");
+        //Time.timeScale = 1f; //doesnt work put else where
+        GamePauseState = false;
+    }
+    public void OnGiveupClick(ClickEvent evt)
+    {
+        Debug.Log("giveup has been clicked");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Game_Over");
+        //Time.timeScale = 1f; //doesnt work put else where
+        GamePauseState = false;
     }
 
     // Update is called once per frame
@@ -35,11 +46,24 @@ public class PauseButtons : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("excp");
+            //Debug.Log("excp"); //pause button pressed
             GamePauseState = !GamePauseState;
             pauseUI.SetActive(!pauseUI.activeInHierarchy);
-            menuButton = buttonDocument.rootVisualElement.Q("mainmenu") as Button;
-            menuButton.RegisterCallback<ClickEvent>(OnMenuClick);
+
+            if (GamePauseState )
+            {
+                Time.timeScale = 0; //no movement
+                menuButton = buttonDocument.rootVisualElement.Q("mainmenu") as Button;  //on screen buttons
+                menuButton.RegisterCallback<ClickEvent>(OnMenuClick);
+
+                giveupButton = buttonDocument.rootVisualElement.Q("giveup") as Button;  //on screen buttons
+                giveupButton.RegisterCallback<ClickEvent>(OnGiveupClick);
+
+            }
+            else
+            {
+                Time.timeScale = 1f;
+            }
         }
     }
 }
