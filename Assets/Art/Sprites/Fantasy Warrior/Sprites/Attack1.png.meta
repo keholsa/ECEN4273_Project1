@@ -105,15 +105,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack1_0
+      name: Attack1_4
       rect:
         serializedVersion: 2
-        x: 709
-        y: 61
-        width: 72
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 688
+        y: 62
+        width: 93
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,15 +126,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack1_3
+      name: Attack1_0
       rect:
         serializedVersion: 2
-        x: 65
+        x: 32
         y: 61
-        width: 33
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 93
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,15 +147,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack1_4
+      name: Attack1_5
       rect:
         serializedVersion: 2
-        x: 851
+        x: 848
         y: 61
-        width: 69
-        height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 93
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,15 +168,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack1_5
+      name: Attack1_6
       rect:
         serializedVersion: 2
-        x: 1039
+        x: 1012
         y: 61
-        width: 66
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 93
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,15 +189,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack1_9
+      name: Attack1_1
       rect:
         serializedVersion: 2
         x: 181
         y: 61
-        width: 69
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 93
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,15 +210,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack1_10
+      name: Attack1_2
       rect:
         serializedVersion: 2
         x: 344
         y: 61
-        width: 64
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 93
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,15 +231,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack1_11
+      name: Attack1_3
       rect:
         serializedVersion: 2
-        x: 511
+        x: 507
         y: 61
-        width: 60
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 93
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,23 +262,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack1_0: -369767205
-      Attack1_1: -1770928802
-      Attack1_10: 1614166303
-      Attack1_11: -139509702
+      Attack1_0: -394125656
+      Attack1_1: 1866704719
       Attack1_12: -2072840204
       Attack1_13: 1525359203
       Attack1_14: 936623590
       Attack1_15: 62246421
       Attack1_16: -1198480647
-      Attack1_2: -1148751221
-      Attack1_3: -394125656
-      Attack1_4: 59052201
-      Attack1_5: 1356677981
-      Attack1_6: -384141053
+      Attack1_2: 1614166303
+      Attack1_3: -139509702
+      Attack1_4: -369767205
+      Attack1_5: 59052201
+      Attack1_6: 1356677981
       Attack1_7: 930761664
       Attack1_8: -119874355
-      Attack1_9: 1866704719
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
