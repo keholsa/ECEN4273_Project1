@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - back
+  - Pushable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - back
   - Water
   - UI
   - Interractable Objects
@@ -39,7 +41,7 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: back0
     uniqueID: 3984478561
     locked: 0
   - name: Default
