@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 8351938093597686061}
   m_Layer: 8
   m_Name: Player (Side Scroll)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   _isMoving: 0
   _isFast: 0
   _isFacingRight: 1
+  GameOverTime: 5
 --- !u!114 &1384818775195749287
 MonoBehaviour:
   m_ObjectHideFlags: 0

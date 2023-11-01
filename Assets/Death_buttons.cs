@@ -25,7 +25,7 @@ public class Death_buttons : MonoBehaviour
     }
     void delayed()
     {
-        glow.active = false;
+        glow.SetActive(false);
     }
 
     // Update is called once per frame
