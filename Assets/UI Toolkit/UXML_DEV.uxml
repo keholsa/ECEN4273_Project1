@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/main_menu_buttons.uss?fileID=7433441132597879392&amp;guid=b2eb60cf62ff6bf44a1b86c2ca2e9952&amp;type=3#main_menu_buttons" />
+    <ui:VisualElement name="Root">
+        <ui:VisualElement name="container" style="flex-grow: 1; left: auto; top: auto; position: relative; margin-top: 106px; align-items: center; justify-content: flex-start;">
+            <ui:Button text="The Knight&apos;s Labyrinth" display-tooltip-when-elided="true" name="hidden_button" style="background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgba(255, 255, 255, 0); font-size: 72px; -unity-font-style: bold; color: rgb(168, 61, 61); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <ui:Button text="Castle_Coutyard" display-tooltip-when-elided="true" name="Castle_Coutyard" class="buttons mmbutton" />
+            <ui:Button text="Castle_Interior" display-tooltip-when-elided="true" name="Castle_Interior" class="buttons mmbutton" />
+            <ui:Button text="DungeonCombat" display-tooltip-when-elided="true" name="DungeonCombat" class="buttons mmbutton" />
+            <ui:Button text="DungeonMaze" display-tooltip-when-elided="true" name="DungeonMaze" class="buttons mmbutton" />
+            <ui:Button text="Level1" display-tooltip-when-elided="true" name="Level1" class="buttons mmbutton" />
+            <ui:Button text="lever_puzzle" display-tooltip-when-elided="true" name="lever_puzzle" class="buttons mmbutton" />
+            <ui:Button text="Main_world" display-tooltip-when-elided="true" name="Main_world" class="buttons mmbutton" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
