@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.SceneManagement; //temprary
 public class Damageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> damageableHit;
@@ -30,8 +30,14 @@ public class Damageable : MonoBehaviour
             if(_health <= 0)
             {
                 IsAlive = false; // Die
+                // temporary sceene change
+                Invoke("loaddev", 3);
             }
         }
+    }
+    void loaddev()
+    {
+        SceneManager.LoadScene("DEV_SCEENE");
     }
 
     [SerializeField]

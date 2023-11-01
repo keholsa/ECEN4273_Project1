@@ -117,7 +117,7 @@ public class PlayerController_SideScroll : MonoBehaviour
                 timeSinceDeath += Time.deltaTime;
                 Debug.Log("Wait for: " + timeSinceDeath);
             }
-            SceneManager.LoadScene("title screen");
+            SceneManager.LoadScene("Game_Over");
 
             
         }

@@ -14,6 +14,9 @@ public class PauseButtons : MonoBehaviour
     [SerializeField]  UIDocument buttonDocument;
     Button menuButton;
     Button giveupButton;
+    RadioButton left_button;
+    RadioButton middle_button;
+    RadioButton right_button;
     [SerializeField] GameObject pauseUI;
 
     void Start()
@@ -40,6 +43,21 @@ public class PauseButtons : MonoBehaviour
         //Time.timeScale = 1f; //doesnt work put else where
         GamePauseState = false;
     }
+    public void leftkey_click(ClickEvent evt)
+    {
+        keys.left_key = true;
+       // Debug.Log("radio button pressed");
+    }
+    public void middlekey_click(ClickEvent evt)
+    {
+        keys.middle_key = true;
+       // Debug.Log("radio button pressed");
+    }
+    public void rightkey_click(ClickEvent evt)
+    {
+        keys.right_key = true;
+        //Debug.Log("radio button pressed");
+    }
 
     // Update is called once per frame
     void Update()
@@ -58,6 +76,12 @@ public class PauseButtons : MonoBehaviour
 
                 giveupButton = buttonDocument.rootVisualElement.Q("giveup") as Button;  //on screen buttons
                 giveupButton.RegisterCallback<ClickEvent>(OnGiveupClick);
+                left_button = buttonDocument.rootVisualElement.Q("left_button") as RadioButton;  //on screen buttons
+                left_button.RegisterCallback<ClickEvent>(leftkey_click);
+                middle_button = buttonDocument.rootVisualElement.Q("middle_button") as RadioButton;  //on screen buttons
+                middle_button.RegisterCallback<ClickEvent>(middlekey_click);
+                right_button = buttonDocument.rootVisualElement.Q("right_button") as RadioButton;  //on screen buttons
+                right_button.RegisterCallback<ClickEvent>(rightkey_click);
 
             }
             else

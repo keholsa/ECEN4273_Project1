@@ -3,8 +3,9 @@
     <ui:VisualElement name="Root">
         <ui:VisualElement name="container" style="flex-grow: 1; left: auto; top: auto; position: relative; margin-top: 106px; align-items: center; justify-content: flex-start;">
             <ui:Button text="The Knight&apos;s Labyrinth" display-tooltip-when-elided="true" name="hidden_button" style="background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgba(255, 255, 255, 0); font-size: 72px; -unity-font-style: bold; color: rgb(168, 61, 61); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
-            <ui:Button text="Start" display-tooltip-when-elided="true" name="start" enable-rich-text="true" class="buttons mmbutton" style="margin-top: 80px; margin-bottom: 50px;" />
-            <ui:Button text="EXIT" display-tooltip-when-elided="true" name="exit" class="buttons mmbutton" />
+        </ui:VisualElement>
+        <ui:VisualElement style="align-items: auto; padding-left: 0; margin-right: 100px; margin-top: 0; margin-bottom: 200px; justify-content: center; flex-direction: column-reverse; height: 672px; width: 1852px;">
+            <ui:Button text="Main Menu" display-tooltip-when-elided="true" name="menu" class="buttons mmbutton" style="justify-content: space-between; white-space: normal; -unity-text-align: middle-center;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
