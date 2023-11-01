@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/main_menu_buttons.uss?fileID=7433441132597879392&amp;guid=b2eb60cf62ff6bf44a1b86c2ca2e9952&amp;type=3#main_menu_buttons" />
+    <ui:VisualElement name="Root">
+        <ui:VisualElement name="container" style="flex-grow: 1; left: auto; top: auto; position: relative; margin-top: 106px; align-items: center; justify-content: flex-start;">
+            <ui:Button text="The Knight&apos;s Labyrinth" display-tooltip-when-elided="true" name="hidden_button" style="background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgba(255, 255, 255, 0); font-size: 72px; -unity-font-style: bold; color: rgb(168, 61, 61); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <ui:Button text="Start" display-tooltip-when-elided="true" name="start" enable-rich-text="true" class="buttons mmbutton" style="margin-top: 160px; margin-bottom: 50px;" />
+            <ui:Button text="Credits" display-tooltip-when-elided="true" name="Credits" enable-rich-text="true" class="buttons mmbutton" style="margin-top: 0; margin-bottom: 50px;" />
+            <ui:Button text="Help" display-tooltip-when-elided="true" name="Instructions" enable-rich-text="true" class="buttons mmbutton" style="margin-top: 0; margin-bottom: 50px;" />
+            <ui:Button text="EXIT" display-tooltip-when-elided="true" name="exit" class="buttons mmbutton" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

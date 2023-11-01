@@ -41,5 +41,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonMaze.unity
     guid: 6dc1f69f2ee77c84789c8326a6ec5374
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: e63d54838d692364490389d7e8e405c2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b94cc66555d6d3247a912b126365a7e1, type: 2}
