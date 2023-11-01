@@ -32,20 +32,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game_Over.unity
     guid: 795180f36199cd04f8cc4e4baa27a229
-  - enabled: 1
-    path: Assets/Scenes/DEV_SCEENE.unity
-    guid: c991d5c8cfc42b243a908db951fdc6ef
-  - enabled: 1
-    path: Assets/Scenes/lever_puzzle.unity
-    guid: d3619cf4b127f494fa5ee7abab09ccbd
-  - enabled: 1
-    path: Assets/Scenes/DungeonMaze.unity
-    guid: 6dc1f69f2ee77c84789c8326a6ec5374
-  - enabled: 1
-    path: Assets/Scenes/Victory.unity
-    guid: e63d54838d692364490389d7e8e405c2
-  - enabled: 1
-    path: Assets/Scenes/Instructions.unity
-    guid: 78e9710f830785040a96909e5d5eb487
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b94cc66555d6d3247a912b126365a7e1, type: 2}
