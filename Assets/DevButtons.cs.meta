@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/KeyAchieved.cs.meta
+guid: 6ee937e736c17f74db67b79aae312338
+========
 guid: 7458ca28cd11dd34a8c24e86f819ff45
+>>>>>>>> main:Assets/DevButtons.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
