@@ -28885,6 +28885,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 208535752}
+    - target: {fileID: 8045041532832876721, guid: 447518c513217f4419ba84841f5e8e50, type: 3}
+      propertyPath: finalBoss
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 447518c513217f4419ba84841f5e8e50, type: 3}
 --- !u!1 &1080459162

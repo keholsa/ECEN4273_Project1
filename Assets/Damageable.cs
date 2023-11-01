@@ -21,6 +21,9 @@ public class Damageable : MonoBehaviour
     [SerializeField]
     private int _health = 3; //Current Health
 
+    [SerializeField]
+    private bool finalBoss = false;
+
     public int Health
     {
         get {return _health;}
@@ -31,13 +34,24 @@ public class Damageable : MonoBehaviour
             {
                 IsAlive = false; // Die
                 // temporary sceene change
-                Invoke("loaddev", 3);
+                if(finalBoss)
+                {
+                    Invoke("loadend", 3);
+                }
+                else
+                {
+                    Invoke("loaddev", 3);
+                }
             }
         }
     }
     void loaddev()
     {
         SceneManager.LoadScene("DEV_SCEENE");
+    }
+    void loadend()
+    {
+        SceneManager.LoadScene("Victory");
     }
 
     [SerializeField]
