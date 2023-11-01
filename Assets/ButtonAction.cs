@@ -53,6 +53,9 @@ public class ButtonAction : MonoBehaviour
         Debug.Log("start has been clicked");
         SceneManager.LoadScene("Level1");
         Time.timeScale = 1f;
+        keys.left_key = false;
+        keys.right_key =false;
+        keys.middle_key = false;
     }
     public void OnCreditsClick(ClickEvent evt)
     {
