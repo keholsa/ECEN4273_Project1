@@ -25456,6 +25456,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2561420373970152973, guid: 2028a8b1258a0e5499e912f1dd309008, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3800579537074808604, guid: 2028a8b1258a0e5499e912f1dd309008, type: 3}
       propertyPath: airspeed
       value: 8
@@ -28813,6 +28817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShadowBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 1415709296473741207, guid: 447518c513217f4419ba84841f5e8e50, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2715119973798475594, guid: 447518c513217f4419ba84841f5e8e50, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -28827,7 +28835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2715119973798475594, guid: 447518c513217f4419ba84841f5e8e50, type: 3}
       propertyPath: m_LocalScale.z
-      value: 8.73536
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2715119973798475594, guid: 447518c513217f4419ba84841f5e8e50, type: 3}
       propertyPath: m_LocalPosition.x
