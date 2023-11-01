@@ -6,10 +6,11 @@
             <ui:Button text="Castle_Coutyard" display-tooltip-when-elided="true" name="Castle_Coutyard" class="buttons mmbutton" />
             <ui:Button text="Castle_Interior" display-tooltip-when-elided="true" name="Castle_Interior" class="buttons mmbutton" />
             <ui:Button text="DungeonCombat" display-tooltip-when-elided="true" name="DungeonCombat" class="buttons mmbutton" />
-            <ui:Button text="DungeonMaze" display-tooltip-when-elided="true" name="DungeonMaze" class="buttons mmbutton" />
+            <ui:Button text="LeverPuzzle" display-tooltip-when-elided="true" name="DungeonMaze" class="buttons mmbutton" />
             <ui:Button text="Level1" display-tooltip-when-elided="true" name="Level1" class="buttons mmbutton" />
             <ui:Button text="lever_puzzle" display-tooltip-when-elided="true" name="lever_puzzle" class="buttons mmbutton" />
             <ui:Button text="Main_world" display-tooltip-when-elided="true" name="Main_world" class="buttons mmbutton" />
+            <ui:Button text="keypad" display-tooltip-when-elided="true" name="keypad" focusable="true" class="buttons mmbutton" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

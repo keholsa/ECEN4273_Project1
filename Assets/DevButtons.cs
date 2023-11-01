@@ -17,6 +17,7 @@ public class DevButtons : MonoBehaviour
     Button lever_puzzleButton;
     Button Main_worldButton;
     Button hiddenButton;
+     Button keypadButton;
 
     void OnEnable()
     {
@@ -33,7 +34,7 @@ public class DevButtons : MonoBehaviour
         Level1Button = buttonDocument.rootVisualElement.Q("Level1") as Button;
         lever_puzzleButton = buttonDocument.rootVisualElement.Q("lever_puzzle") as Button;
         Main_worldButton = buttonDocument.rootVisualElement.Q("Main_world") as Button;
-        //exitButton = buttonDocument.rootVisualElement.Q("exit") as Button;
+        keypadButton = buttonDocument.rootVisualElement.Q("keypad") as Button;
         hiddenButton = buttonDocument.rootVisualElement.Q("hidden_button") as Button;
 
 
@@ -44,7 +45,7 @@ public class DevButtons : MonoBehaviour
         Level1Button.RegisterCallback<ClickEvent>(Level1Click);
         lever_puzzleButton.RegisterCallback<ClickEvent>(lever_puzzleClick);
         Main_worldButton.RegisterCallback<ClickEvent>(Main_worldClick);
-        //exitButton.RegisterCallback<ClickEvent>(OnExitClick);
+        keypadButton.RegisterCallback<ClickEvent>(OnkeypadClick);
         hiddenButton.RegisterCallback<ClickEvent>(CreditsClick);
     }
 
@@ -52,6 +53,12 @@ public class DevButtons : MonoBehaviour
     {
         Debug.Log("credits has been clicked");
         SceneManager.LoadScene("Game_Over");
+        Time.timeScale = 1f;
+    }
+        public void OnkeypadClick(ClickEvent evt)
+    {
+        //Debug.Log("credits has been clicked");
+        SceneManager.LoadScene("keypad");
         Time.timeScale = 1f;
     }
 
@@ -77,7 +84,7 @@ public class DevButtons : MonoBehaviour
     public void DungeonMazeClick(ClickEvent evt)
     {
         //Debug.Log("start has been clicked");
-        SceneManager.LoadScene("DungeonMaze");
+        SceneManager.LoadScene("LeverPuzzle");
         Time.timeScale = 1f;
     }
     public void Level1Click(ClickEvent evt)
